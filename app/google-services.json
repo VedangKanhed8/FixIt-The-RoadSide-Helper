@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "813537281841",
+    "project_id": "mechsupp-a0972",
+    "storage_bucket": "mechsupp-a0972.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813537281841:android:1b951eca338cb7b0e85210",
+        "android_client_info": {
+          "package_name": "com.example.mechon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813537281841-gv2h8a20qjglft6noplvo47nkdv3ksa6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi8q6gEftb-0YNohmd0QWHB0qYnPD41zM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813537281841-gv2h8a20qjglft6noplvo47nkdv3ksa6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813537281841:android:a6a61a24ce283e18e85210",
+        "android_client_info": {
+          "package_name": "com.example.mechtrail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813537281841-gv2h8a20qjglft6noplvo47nkdv3ksa6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi8q6gEftb-0YNohmd0QWHB0qYnPD41zM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813537281841-gv2h8a20qjglft6noplvo47nkdv3ksa6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
