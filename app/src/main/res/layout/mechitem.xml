@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+
+    <ImageView
+        android:id="@+id/profilId"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/ic_launcher_doc_foreground">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/mechNameId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profilId"
+        android:layout_marginLeft="10dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <TextView
+        android:id="@+id/mechAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mechNameId"
+        android:text="Address"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_toRightOf="@id/profilId"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"></TextView>
+
+    <TextView
+        android:id="@+id/rat"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/profilId"
+        android:layout_marginTop="10dp"
+        android:text=" Rating : 4.3"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <Button
+        android:id="@+id/bookApp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/profilId"
+        android:layout_toRightOf="@id/rat"
+        android:text="Book appointment">
+
+    </Button>
+
+
+
+
+
+
+
+
+</RelativeLayout>
