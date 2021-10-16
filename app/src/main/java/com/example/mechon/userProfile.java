@@ -14,18 +14,23 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-public class mechProfile extends AppCompatActivity {
+public class userProfile extends AppCompatActivity {
 
     TextInputEditText name,addr,phone,email,pass;
     FirebaseAuth firebaseAuth;
     Button next;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mech_profile);
+        setContentView(R.layout.activity_user_profile);
+
         name=findViewById(R.id.userName);
         addr=findViewById(R.id.userAddress);
         phone=findViewById(R.id.userPhone);
@@ -34,33 +39,33 @@ public class mechProfile extends AppCompatActivity {
         pass=findViewById(R.id.userPass);
         firebaseAuth=FirebaseAuth.getInstance();
 
+        DatabaseReference root = FirebaseDatabase.getInstance().getReference("user");
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                String mName=name.getText().toString();
-                String mAddr=addr.getText().toString();
-                String mPhone=phone.getText().toString();
-                String mEmail=email.getText().toString();
-                String mPass=pass.getText().toString();
+            public void onClick(View v) {
+                String userName = Objects.requireNonNull(name.getText()).toString();
+                String userAddress = Objects.requireNonNull(addr.getText()).toString();
+                String userPhone = Objects.requireNonNull(phone.getText()).toString();
+                String userEmail = Objects.requireNonNull(email.getText()).toString();
+                String userPass = Objects.requireNonNull(pass.getText()).toString();
 
-                firebaseAuth.createUserWithEmailAndPassword(mEmail,mPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                firebaseAuth.createUserWithEmailAndPassword(userEmail,userPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
-                        {
+                        if(task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(),"done",Toast.LENGTH_SHORT).show();
-                            mechClass m1=new mechClass();
-                            m1.setName(mName);
-                            m1.setEmail(mEmail);
-                            m1.setPhone(mPhone);
-                            m1.setAddress(mAddr);
-                            Intent i=new Intent(getApplicationContext(),mechAuth.class);
-                            i.putExtra("myObj",(Serializable) m1);
-                            startActivity(i);
+                            userClass user=new userClass();
+                            user.setName(userName);
+                            user.setEmail(userEmail);
+                            user.setPhone(userPhone);
+                            user.setAddress(userAddress);
+
+                            String md=root.push().getKey();
+                            root.child(md).setValue(user);
                         }
-                        else
-                        {
+                        else {
                             Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
                         }
                     }

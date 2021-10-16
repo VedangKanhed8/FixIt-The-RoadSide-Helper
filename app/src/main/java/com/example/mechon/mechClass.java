@@ -7,6 +7,7 @@ public class mechClass implements Serializable
     String name,email,address,phone,lati,longi,prolink,liclink;
 
     public mechClass() {
+
     }
 
     public mechClass(String name, String email, String address, String phone, String lati, String longi, String prolink, String liclink) {
