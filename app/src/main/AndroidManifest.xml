@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MechOn">
         <activity
+            android:name=".userProfile"
+            android:exported="false" />
+        <activity
+            android:name=".userAuthentication"
+            android:exported="false" />
+        <activity
             android:name=".mechAuth"
             android:exported="true" />
         <activity
