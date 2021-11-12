@@ -8,32 +8,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
 import java.io.Serializable;
+
 
 public class mechProfile extends AppCompatActivity {
 
     TextInputEditText name,addr,phone,email,pass;
     FirebaseAuth firebaseAuth;
-    Button next;
+    Button next,mechLog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mech_profile);
-        name=findViewById(R.id.userName);
-        addr=findViewById(R.id.userAddress);
-        phone=findViewById(R.id.userPhone);
+        name=findViewById(R.id.MechName);
+        addr=findViewById(R.id.mechAdd);
+        phone=findViewById(R.id.mechPhone);
         next=findViewById(R.id.next);
-        email=findViewById(R.id.userEmail);
-        pass=findViewById(R.id.userPass);
+        email=findViewById(R.id.mechEmail);
+        pass=findViewById(R.id.mechPass);
         firebaseAuth=FirebaseAuth.getInstance();
-
+        mechLog=findViewById(R.id.mechLogin);
+        mechLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),mechLogin.class);
+                startActivity(i);
+            }
+        });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)

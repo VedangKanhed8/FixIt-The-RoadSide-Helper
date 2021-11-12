@@ -35,25 +35,25 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"></TextView>
 
-    <TextView
-        android:id="@+id/rat"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/profilId"
-        android:layout_marginTop="10dp"
-        android:text=" Rating : 4.3"
-        android:textColor="@color/black"
-        android:textSize="20dp"></TextView>
 
     <Button
         android:id="@+id/bookApp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/profilId"
         android:layout_toRightOf="@id/rat"
+        android:background="#D32A4C"
         android:text="Book appointment">
 
     </Button>
+
+    <Button
+        android:id="@+id/rat"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profilId"
+        android:background="#C1EA91"
+        android:text="See\nfeedbacks"></Button>
 
 
 

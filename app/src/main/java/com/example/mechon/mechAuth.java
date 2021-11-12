@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -34,7 +35,7 @@ public class mechAuth extends AppCompatActivity {
     private StorageReference stoRef= FirebaseStorage.getInstance().getReference();
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference("mech");
     private String proDown,liDown;
-
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,8 @@ public class mechAuth extends AppCompatActivity {
         proView=findViewById(R.id.proId);
         licView=findViewById(R.id.licProId);
         licBtn=findViewById(R.id.licBtn);
+
+        firebaseAuth=FirebaseAuth.getInstance();
         gobtn=findViewById(R.id.nextBtn);
         proView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,13 +100,15 @@ public class mechAuth extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),proDown+" "+liDown,Toast.LENGTH_SHORT).show();
                 Intent i = getIntent();
                 mechClass u1 = (mechClass) i.getSerializableExtra("myObj");
+
                 u1.setProlink(proDown);
                 u1.setLiclink(liDown);
                 u1.setLati("100");
                 u1.setLongi("100");
+                u1.setMuid(firebaseAuth.getUid());
                 String md=root.push().getKey();
                 root.child(md).setValue(u1);
-                Intent j=new Intent(getApplicationContext(),userMechView.class);
+                Intent j=new Intent(getApplicationContext(),mechMain.class);
                 startActivity(j);
             }
         });

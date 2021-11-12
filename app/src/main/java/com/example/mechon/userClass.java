@@ -4,17 +4,26 @@ import java.io.Serializable;
 
 public class userClass implements Serializable
 {
-    String name,email,address,phone;
+    String name,email,address,phone,uuid;
 
     public userClass() {
 
     }
 
-    public userClass(String mName, String mEmail, String mAddr, String mPhone) {
+    public userClass(String mName, String mEmail, String mAddr, String mPhone,String uuid) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.phone = phone;
+        this.uuid = phone;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getName() {

@@ -14,32 +14,40 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class userProfile extends AppCompatActivity {
+public class user2profile extends AppCompatActivity {
 
     TextInputEditText name,addr,phone,email,pass;
     FirebaseAuth firebaseAuth;
-    Button next;
-
+    Button next,log;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile);
-
+        setContentView(R.layout.activity_user2profile);
         name=findViewById(R.id.userName);
         addr=findViewById(R.id.userAddress);
         phone=findViewById(R.id.userPhone);
-        next=findViewById(R.id.next);
+        next=findViewById(R.id.unext);
         email=findViewById(R.id.userEmail);
         pass=findViewById(R.id.userPass);
+        log=findViewById(R.id.loginBtnSign);
         firebaseAuth=FirebaseAuth.getInstance();
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),userLoginView.class);
+                startActivity(i);
+            }
+        });
 
         DatabaseReference root = FirebaseDatabase.getInstance().getReference("user");
+        DatabaseReference root1 = FirebaseDatabase.getInstance().getReference("userById");
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,9 +69,14 @@ public class userProfile extends AppCompatActivity {
                             user.setEmail(userEmail);
                             user.setPhone(userPhone);
                             user.setAddress(userAddress);
-
+                            user.setUuid(firebaseAuth.getUid());
                             String md=root.push().getKey();
                             root.child(md).setValue(user);
+                            userClass u=user;
+                            root1.child(firebaseAuth.getUid()).setValue(user);
+                            Intent j=new Intent(getApplicationContext(),userMainView.class);
+                            j.putExtra("myObj",(Serializable) u);
+                            startActivity(j);
                         }
                         else {
                             Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();

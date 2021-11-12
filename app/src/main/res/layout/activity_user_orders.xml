@@ -4,29 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mechMain">
+    tools:context=".userOrders">
 
     <Button
-        android:id="@+id/ordBtn"
+        android:id="@+id/userPend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="appointment"
+        android:text="Pending Orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.147" />
 
     <Button
-        android:id="@+id/feedBackbtn"
+        android:id="@+id/userComple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See\nFeedbacks"
+        android:text="Cancelled orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ordBtn"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintTop_toBottomOf="@+id/userPend"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <Button
+        android:id="@+id/giveFeedBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Give Feedback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userComple"
+        app:layout_constraintVertical_bias="0.227" />
 </androidx.constraintlayout.widget.ConstraintLayout>

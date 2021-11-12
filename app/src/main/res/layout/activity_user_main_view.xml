@@ -4,29 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mechMain">
+    tools:context=".userMainView">
 
     <Button
-        android:id="@+id/ordBtn"
+        android:id="@+id/BookSerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="appointment"
+        android:text="Book your service"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <Button
-        android:id="@+id/feedBackbtn"
+        android:id="@+id/ordViewBtnu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See\nFeedbacks"
+        android:text="My Orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ordBtn"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintTop_toBottomOf="@+id/BookSerBtn"
+        app:layout_constraintVertical_bias="0.331" />
 </androidx.constraintlayout.widget.ConstraintLayout>

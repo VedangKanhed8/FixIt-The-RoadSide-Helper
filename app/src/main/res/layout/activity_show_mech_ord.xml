@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mechMain">
+    tools:context=".showMechOrd">
 
     <Button
-        android:id="@+id/ordBtn"
+        android:id="@+id/pendBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="appointment"
+        android:text="Pending orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <Button
-        android:id="@+id/feedBackbtn"
+        android:id="@+id/CompBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See\nFeedbacks"
+        android:text="Completed orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ordBtn"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintTop_toBottomOf="@+id/pendBtn"
+        app:layout_constraintVertical_bias="0.234" />
 </androidx.constraintlayout.widget.ConstraintLayout>

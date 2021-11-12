@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mechon">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +13,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MechOn">
+        <activity
+            android:name=".userFeed"
+            android:exported="true" />
+        <activity
+            android:name=".userComp"
+            android:exported="true" />
+        <activity
+            android:name=".userPend"
+            android:exported="true" />
+        <activity
+            android:name=".userOrders"
+            android:exported="true" />
+        <activity
+            android:name=".mechLogin"
+            android:exported="true" />
+        <activity
+            android:name=".mechCompOrders"
+            android:exported="true" />
+        <activity
+            android:name=".mechPendOrders"
+            android:exported="true" />
+        <activity
+            android:name=".userLoginView"
+            android:exported="true" />
+        <activity
+            android:name=".ui.login.userLogin"
+            android:exported="true"
+            android:label="@string/title_activity_user_login" />
+        <activity
+            android:name=".userMainView"
+            android:exported="true" />
+        <activity
+            android:name=".feedbackShow"
+            android:exported="true" />
+        <activity
+            android:name=".showMechOrd"
+            android:exported="true" />
+        <activity
+            android:name=".user2profile"
+            android:exported="true" />
         <activity
             android:name=".userMechView"
             android:exported="true" />

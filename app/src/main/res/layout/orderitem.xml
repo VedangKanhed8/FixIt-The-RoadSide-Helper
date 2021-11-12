@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/ordname"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/ordAdd"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ordname"
+            android:layout_marginTop="10sp"
+            android:text="Address:"
+            android:textSize="20sp"></TextView>
+
+
+        <ImageButton
+            android:id="@+id/ordOk"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_toRightOf="@id/ordname"
+            android:background="#75D879"
+            android:src="@drawable/ic_baseline_done"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/ordCan"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_below="@id/ordOk"
+            android:layout_toRightOf="@id/ordname"
+            android:background="#B5635D"
+            android:src="@drawable/ic_baseline_close">
+
+        </ImageButton>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -4,13 +4,9 @@ import java.io.Serializable;
 
 public class mechClass implements Serializable
 {
-    String name,email,address,phone,lati,longi,prolink,liclink;
+    String name,email,address,phone,lati,longi,prolink,liclink,muid;
 
-    public mechClass() {
-
-    }
-
-    public mechClass(String name, String email, String address, String phone, String lati, String longi, String prolink, String liclink) {
+    public mechClass(String name, String email, String address, String phone, String lati, String longi, String prolink, String liclink, String muid) {
         this.name = name;
         this.email = email;
         this.address = address;
@@ -19,13 +15,10 @@ public class mechClass implements Serializable
         this.longi = longi;
         this.prolink = prolink;
         this.liclink = liclink;
+        this.muid = muid;
     }
 
-    public mechClass(String mName, String mEmail, String mAddr, String mPhone) {
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phone = phone;
+    public mechClass() {
     }
 
     public String getName() {
@@ -90,5 +83,13 @@ public class mechClass implements Serializable
 
     public void setLiclink(String liclink) {
         this.liclink = liclink;
+    }
+
+    public String getMuid() {
+        return muid;
+    }
+
+    public void setMuid(String muid) {
+        this.muid = muid;
     }
 }
