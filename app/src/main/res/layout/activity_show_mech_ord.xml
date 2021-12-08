@@ -8,8 +8,11 @@
 
     <Button
         android:id="@+id/pendBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         android:text="Pending orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +23,11 @@
 
     <Button
         android:id="@+id/CompBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         android:text="Completed orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

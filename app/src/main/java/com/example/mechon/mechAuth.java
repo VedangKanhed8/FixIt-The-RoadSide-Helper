@@ -35,6 +35,7 @@ public class mechAuth extends AppCompatActivity {
     private StorageReference stoRef= FirebaseStorage.getInstance().getReference();
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference("mech");
     private String proDown,liDown;
+    private ProgressBar status;
     FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,9 @@ public class mechAuth extends AppCompatActivity {
         proView=findViewById(R.id.proId);
         licView=findViewById(R.id.licProId);
         licBtn=findViewById(R.id.licBtn);
-
+        status=findViewById(R.id.progressBar1);
+        status.setVisibility(View.INVISIBLE);
+        //Toast.makeText(getApplicationContext(), proDown+" "+liDown, Toast.LENGTH_SHORT).show();
         firebaseAuth=FirebaseAuth.getInstance();
         gobtn=findViewById(R.id.nextBtn);
         proView.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +72,7 @@ public class mechAuth extends AppCompatActivity {
         proBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                status.setVisibility(View.VISIBLE);
                 if(prouri!=null)
                 {
                     uploadTofirebase(prouri,"pro");
@@ -83,6 +87,7 @@ public class mechAuth extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                status.setVisibility(View.VISIBLE);
                 if(liuri!=null)
                 {
                     uploadTofirebase(liuri,"lic");
@@ -97,19 +102,28 @@ public class mechAuth extends AppCompatActivity {
         gobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),proDown+" "+liDown,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),proDown+" "+liDown,Toast.LENGTH_SHORT).show();
                 Intent i = getIntent();
                 mechClass u1 = (mechClass) i.getSerializableExtra("myObj");
+                if(proDown==null || liDown==null)
+                {
+                    Toast.makeText(getApplicationContext(), "Upload both photos", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    u1.setProlink(proDown);
+                    u1.setLiclink(liDown);
+                    u1.setLati("100");
+                    u1.setLongi("100");
+                    u1.setMuid(firebaseAuth.getUid());
+                    String md=root.push().getKey();
+                    root.child(md).setValue(u1);
+                    Intent j=new Intent(getApplicationContext(),mechMain.class);
+                    startActivity(j);
+                    finish();
+                }
 
-                u1.setProlink(proDown);
-                u1.setLiclink(liDown);
-                u1.setLati("100");
-                u1.setLongi("100");
-                u1.setMuid(firebaseAuth.getUid());
-                String md=root.push().getKey();
-                root.child(md).setValue(u1);
-                Intent j=new Intent(getApplicationContext(),mechMain.class);
-                startActivity(j);
+
             }
         });
 
@@ -127,7 +141,8 @@ public class mechAuth extends AppCompatActivity {
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        //progressBar.setVisibility(View.INVISIBLE);
+                        status.setVisibility(View.INVISIBLE);
+
                         Toast.makeText(getApplicationContext(),"Succesful",Toast.LENGTH_SHORT).show();
                         if(typ=="pro")
                         {

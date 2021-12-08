@@ -1,12 +1,16 @@
 package com.example.mechon;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,6 +35,30 @@ public class userComp extends AppCompatActivity {
                         .build();
         adapter=new userOrderAdapter(options,this,"showOrd");
         recyclerView.setAdapter(adapter);
+        BottomNavigationView bottomNavigationView=findViewById(R.id.ordMenuUser);
+        bottomNavigationView.setSelectedItemId(R.id.cancOrdNav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item)
+            {
+                switch (item.getItemId())
+                {
+                    case R.id.cancOrdNav:
+                        return true;
+                    case R.id.pendOrdNavU:
+                        startActivity(new Intent(getApplicationContext(),userPend.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+                    case R.id.fedOrdUser:
+                        startActivity(new Intent(getApplicationContext(),userFeed.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
     @Override
     protected void onStart() {

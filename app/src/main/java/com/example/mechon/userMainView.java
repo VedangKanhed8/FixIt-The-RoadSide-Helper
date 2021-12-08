@@ -31,7 +31,7 @@ public class userMainView extends AppCompatActivity {
         showOrd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j =new Intent(getApplicationContext(),userOrders.class);
+                Intent j =new Intent(getApplicationContext(),userPend.class);
                 startActivity(j);
             }
         });

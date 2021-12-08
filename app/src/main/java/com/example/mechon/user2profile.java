@@ -43,6 +43,7 @@ public class user2profile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i=new Intent(getApplicationContext(),userLoginView.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -58,31 +59,39 @@ public class user2profile extends AppCompatActivity {
                 String userEmail = Objects.requireNonNull(email.getText()).toString();
                 String userPass = Objects.requireNonNull(pass.getText()).toString();
 
-                firebaseAuth.createUserWithEmailAndPassword(userEmail,userPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                if(userName.isEmpty()==true || userAddress.isEmpty()==true || userPhone.isEmpty()==true || userEmail.isEmpty()==true || userPass.isEmpty()==true)
+                {
+                    Toast.makeText(getApplicationContext(), "Some fileds are empty", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    firebaseAuth.createUserWithEmailAndPassword(userEmail,userPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(),"done",Toast.LENGTH_SHORT).show();
+                                userClass user=new userClass();
+                                user.setName(userName);
+                                user.setEmail(userEmail);
+                                user.setPhone(userPhone);
+                                user.setAddress(userAddress);
+                                user.setUuid(firebaseAuth.getUid());
+                                String md=root.push().getKey();
+                                root.child(md).setValue(user);
+                                userClass u=user;
+                                root1.child(firebaseAuth.getUid()).setValue(user);
+                                Intent j=new Intent(getApplicationContext(),userMainView.class);
+                                j.putExtra("myObj",(Serializable) u);
+                                startActivity(j);
+                                finish();
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
 
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(),"done",Toast.LENGTH_SHORT).show();
-                            userClass user=new userClass();
-                            user.setName(userName);
-                            user.setEmail(userEmail);
-                            user.setPhone(userPhone);
-                            user.setAddress(userAddress);
-                            user.setUuid(firebaseAuth.getUid());
-                            String md=root.push().getKey();
-                            root.child(md).setValue(user);
-                            userClass u=user;
-                            root1.child(firebaseAuth.getUid()).setValue(user);
-                            Intent j=new Intent(getApplicationContext(),userMainView.class);
-                            j.putExtra("myObj",(Serializable) u);
-                            startActivity(j);
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
 
             }
         });

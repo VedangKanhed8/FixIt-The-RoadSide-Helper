@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/drawable/completelogo.xml" value="0.1" />
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/drawable/pendinglogo.xml" value="0.1" />
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/drawable/selector.xml" value="0.1" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_feedback_show.xml" value="0.11655405405405406" />
-        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_main.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_main.xml" value="0.13999999999999999" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_mech_auth.xml" value="0.22" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_mech_comp_orders.xml" value="0.1" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_mech_login.xml" value="0.10655737704918032" />
@@ -13,7 +16,8 @@
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_mech_profile.xml" value="0.15217391304347827" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_order_mech_view.xml" value="0.1" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_show_mech_ord.xml" value="0.1" />
-        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_user2profile.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_showuserfed.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_user2profile.xml" value="0.22" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_user_comp.xml" value="0.10655737704918032" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_user_feed.xml" value="0.1" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/activity_user_login_view.xml" value="0.11655405405405406" />
@@ -26,10 +30,48 @@
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/feedback_view_item.xml" value="0.1" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/fragment_comp_mech_ord.xml" value="0.1" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/fragment_pend_mechorders.xml" value="0.1" />
-        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/mechitem.xml" value="0.16666666666666666" />
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/mechitem.xml" value="0.1643835616438356" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/orderitem.xml" value="0.14666666666666667" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/send_feedback.xml" value="0.1" />
         <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/layout/userorderitem.xml" value="0.16666666666666666" />
+        <entry key="..\:/Android dev/1. Introduction to Android Development/mechOn/app/src/main/res/menu/menu_nav.xml" value="0.11587837837837837" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10625" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/drawable/custom_button.xml" value="0.10625" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/drawable/ic_baseline_close.xml" value="0.10625" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/drawable/pendinglogo.xml" value="0.10625" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/drawable/selector.xml" value="0.12575250836120402" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_main.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_mech_auth.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_mech_login.xml" value="0.11351351351351352" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_mech_main.xml" value="0.12" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_mech_pend_orders.xml" value="0.1" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_mech_profile.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_show_mech_ord.xml" value="0.12" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_showuserfed.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_user2profile.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_user_comp.xml" value="0.22" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_user_feed.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_user_login_view.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_user_main_view.xml" value="0.11351351351351352" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_user_pend.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/activity_welcomesplashscreen.xml" value="0.1" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/layout/mechitem.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/menu/menu_nav.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/menu/usermenu.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10625" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/mipmap-anydpi-v26/ic_launcher_doc.xml" value="0.10625" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/mipmap-anydpi-v26/ic_launcher_doc_round.xml" value="0.10625" />
+        <entry key="..\:/Android dev/mechOnfintri/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10625" />
+        <entry key="..\:/Coding files/Android dev/mechOn/app/src/main/res/layout/add_address_item.xml" value="0.22" />
+        <entry key="..\:/Coding files/Android dev/mechOn/app/src/main/res/layout/mechitem.xml" value="0.11612021857923498" />
+        <entry key="..\:/Coding files/Android dev/mechOn/app/src/main/res/layout/orderitem.xml" value="0.10666666666666667" />
+        <entry key="..\:/Coding files/Android dev/mechOnfintri/app/src/main/res/layout/activity_main.xml" value="0.12972972972972974" />
+        <entry key="..\:/Coding files/Android dev/mechOnfintri/app/src/main/res/layout/activity_mech_auth.xml" value="0.12972972972972974" />
+        <entry key="..\:/Coding files/Android dev/mechOnfintri/app/src/main/res/layout/activity_mech_main.xml" value="0.12972972972972974" />
+        <entry key="..\:/Coding files/Android dev/mechOnfintri/app/src/main/res/layout/activity_user_main_view.xml" value="0.12972972972972974" />
+        <entry key="..\:/Coding files/Android dev/mechOnfintri/app/src/main/res/layout/activity_welcomesplashscreen.xml" value="0.1" />
+        <entry key="..\:/Coding files/Android dev/mechOnfintri/app/src/main/res/layout/mechitem.xml" value="0.10666666666666667" />
+        <entry key="..\:/Coding files/Android dev/mechOnfintri/app/src/main/res/layout/orderitem.xml" value="0.14666666666666667" />
       </map>
     </option>
   </component>

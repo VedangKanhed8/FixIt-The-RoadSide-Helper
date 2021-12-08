@@ -38,7 +38,11 @@ public class mechLogin extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),"Empty",Toast.LENGTH_SHORT).show();
                 }
-                loginuser(finemail,finpass);
+                else
+                {
+                    loginuser(finemail,finpass);
+                }
+
             }
         });
 
@@ -51,6 +55,7 @@ public class mechLogin extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 Intent i=new Intent(getApplicationContext(),mechMain.class);
                 startActivity(i);
+                finish();
             }
         });
     }

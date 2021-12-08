@@ -8,25 +8,45 @@
 
     <Button
         android:id="@+id/ordBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="appointment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/appointment"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintTop_toBottomOf="@+id/mechordlogo" />
 
     <Button
         android:id="@+id/feedBackbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="See\nFeedbacks"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/see_feedbacks"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mechfedlogo" />
+
+    <ImageView
+        android:id="@+id/mechordlogo"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/myorders" />
+
+    <ImageView
+        android:id="@+id/mechfedlogo"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ordBtn"
-        app:layout_constraintVertical_bias="0.306" />
+        tools:srcCompat="@drawable/seefeedback" />
 </androidx.constraintlayout.widget.ConstraintLayout>

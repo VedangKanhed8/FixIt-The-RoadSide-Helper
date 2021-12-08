@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MechOn">
         <activity
+            android:name=".showuserfed"
+            android:exported="true" />
+        <activity
             android:name=".userFeed"
             android:exported="true" />
         <activity
@@ -67,6 +70,9 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".welcomesplashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

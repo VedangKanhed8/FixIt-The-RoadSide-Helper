@@ -20,7 +20,7 @@ public class mechMain extends AppCompatActivity {
         ordBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j=new Intent(getApplicationContext(),showMechOrd.class);
+                Intent j=new Intent(getApplicationContext(),mechPendOrders.class);
                 startActivity(j);
             }
         });

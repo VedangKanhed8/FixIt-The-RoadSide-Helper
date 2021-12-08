@@ -48,7 +48,10 @@ public class userLoginView extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),"Empty",Toast.LENGTH_SHORT).show();
                 }
-                loginuser(finemail,finpass);
+                else
+                {
+                    loginuser(finemail,finpass);
+                }
                 //Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
 
             }
@@ -72,6 +75,7 @@ public class userLoginView extends AppCompatActivity {
                         Intent i=new Intent(getApplicationContext(),userMainView.class);
                         i.putExtra("myObj",(Serializable) u);
                         startActivity(i);
+                        finish();
                     }
 
                     @Override

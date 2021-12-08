@@ -39,6 +39,7 @@ public class mechProfile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i=new Intent(getApplicationContext(),mechLogin.class);
                 startActivity(i);
+                finish();
             }
         });
         next.setOnClickListener(new View.OnClickListener() {
@@ -50,28 +51,35 @@ public class mechProfile extends AppCompatActivity {
                 String mPhone=phone.getText().toString();
                 String mEmail=email.getText().toString();
                 String mPass=pass.getText().toString();
-
-                firebaseAuth.createUserWithEmailAndPassword(mEmail,mPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
-                        {
-                            Toast.makeText(getApplicationContext(),"done",Toast.LENGTH_SHORT).show();
-                            mechClass m1=new mechClass();
-                            m1.setName(mName);
-                            m1.setEmail(mEmail);
-                            m1.setPhone(mPhone);
-                            m1.setAddress(mAddr);
-                            Intent i=new Intent(getApplicationContext(),mechAuth.class);
-                            i.putExtra("myObj",(Serializable) m1);
-                            startActivity(i);
+                if(mName.isEmpty()==true || mAddr.isEmpty()==true || mPhone.isEmpty()==true || mEmail.isEmpty()==true || mPass.isEmpty()==true)
+                {
+                    Toast.makeText(getApplicationContext(), "Some fields are empty", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    firebaseAuth.createUserWithEmailAndPassword(mEmail,mPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful())
+                            {
+                                Toast.makeText(getApplicationContext(),"done",Toast.LENGTH_SHORT).show();
+                                mechClass m1=new mechClass();
+                                m1.setName(mName);
+                                m1.setEmail(mEmail);
+                                m1.setPhone(mPhone);
+                                m1.setAddress(mAddr);
+                                Intent i=new Intent(getApplicationContext(),mechAuth.class);
+                                i.putExtra("myObj",(Serializable) m1);
+                                startActivity(i);
+                                finish();
+                            }
+                            else
+                            {
+                                Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        else
-                        {
-                            Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                    });
+                }
 
             }
         });

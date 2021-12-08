@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         userModeButton = (Button) findViewById(R.id.userModeBtn);
         mechModeButton = (Button) findViewById(R.id.mechModeBtn);
-        adminModeButton = (Button) findViewById(R.id.adminModeBtn);
+        //adminModeButton = (Button) findViewById(R.id.adminModeBtn);
 
 
 //        Intent mechLoginIntent =new Intent(getApplicationContext(),showMechOrd.class);

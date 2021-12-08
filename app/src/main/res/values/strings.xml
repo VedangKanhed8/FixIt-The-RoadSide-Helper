@@ -11,4 +11,25 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user">User</string>
+    <string name="mechanic">Mechanic</string>
+    <string name="admin">Admin</string>
+    <string name="choose_your_option">Choose Your Option</string>
+    <string name="my_orders">My Orders</string>
+    <string name="book_your_service">Book your service</string>
+    <string name="login">Login</string>
+    <string name="pending_orders">Pending Orders</string>
+    <string name="cancelled_orders">Cancelled orders</string>
+    <string name="give_feedback">Give Feedback</string>
+    <string name="appointment">Appointment</string>
+    <string name="see_feedbacks">See Feedbacks</string>
+    <string name="title_activity_welcomscreen">welcomscreen</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

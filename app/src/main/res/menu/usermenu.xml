@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pendOrdNavU"
+        android:title="Pending order"
+        android:icon="@drawable/pendinglogo"></item>
+
+    <item
+        android:id="@+id/fedOrdUser"
+        android:title="Give feedback"
+        android:icon="@drawable/completelogo"></item>
+    <item
+        android:id="@+id/cancOrdNav"
+        android:title="Canceled order"
+        android:icon="@drawable/ic_baseline_close"></item>
+</menu>

@@ -2,6 +2,7 @@ package com.example.mechon;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -29,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class mechAdapter extends RecyclerView.Adapter<mechAdapter.MyviewHolder>
@@ -58,6 +60,7 @@ public class mechAdapter extends RecyclerView.Adapter<mechAdapter.MyviewHolder>
         mechClass m=list.get(position);
         holder.mname.setText("Name : "+m.getName());
         holder.madd.setText("Address : "+m.getAddress());
+        holder.mphone.setText("Mobile :"+m.getPhone());
         Uri ur;
         ur=Uri.parse(m.getProlink());
         FirebaseAuth firebaseAuth;
@@ -107,6 +110,14 @@ public class mechAdapter extends RecyclerView.Adapter<mechAdapter.MyviewHolder>
                 dialog.show();
             }
         });
+        holder.showFeedMech.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent j=new Intent(context,showuserfed.class);
+                j.putExtra("mechUid",m.getMuid());
+                context.startActivity(j);
+            }
+        });
 
     }
 
@@ -119,15 +130,17 @@ public class mechAdapter extends RecyclerView.Adapter<mechAdapter.MyviewHolder>
 
     public static class MyviewHolder extends RecyclerView.ViewHolder{
 
-        TextView mname,madd;
+        TextView mname,madd,mphone;
         ImageView mphoto;
-        Button bookSer;
+        Button bookSer,showFeedMech;
         public MyviewHolder(@NonNull View itemView) {
             super(itemView);
             mname=itemView.findViewById(R.id.mechNameId);
             madd=itemView.findViewById(R.id.mechAdd);
+            mphone=itemView.findViewById(R.id.mechphone);
             mphoto=itemView.findViewById(R.id.profilId);
             bookSer=itemView.findViewById(R.id.bookApp);
+            showFeedMech=itemView.findViewById(R.id.ShowUserMechrat);
         }
     }
 }

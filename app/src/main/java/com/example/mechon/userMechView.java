@@ -48,7 +48,7 @@ public class userMechView extends AppCompatActivity
         setContentView(R.layout.activity_user_mech_view);
         Intent i = getIntent();
         userClass u1 = (userClass) i.getSerializableExtra("myObj");
-        Toast.makeText(getApplicationContext(),u1.getName()+" "+u1.getAddress(),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),u1.getName()+" "+u1.getAddress(),Toast.LENGTH_SHORT).show();
         recyclerView=findViewById(R.id.mechListView);
         database= FirebaseDatabase.getInstance().getReference("mech");
         recyclerView.setHasFixedSize(false);

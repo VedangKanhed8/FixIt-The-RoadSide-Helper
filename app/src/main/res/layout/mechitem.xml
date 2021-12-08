@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
     android:layout_margin="16dp">
@@ -34,32 +40,47 @@
         android:layout_toRightOf="@id/profilId"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"></TextView>
-
-
-    <Button
-        android:id="@+id/bookApp"
+    <TextView
+        android:id="@+id/mechphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mechAdd"
+        android:text="Mobile:"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_toRightOf="@id/profilId"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"></TextView>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@+id/profilId"
-        android:layout_toRightOf="@id/rat"
-        android:background="#D32A4C"
-        android:text="Book appointment">
+        android:weightSum="2.0"
+        style="?attr/buttonBarStyle">
+        >
 
-    </Button>
+        <Button
+            android:id="@+id/ShowUserMechrat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="User\nFeedback"
+            android:textSize="12sp"></Button>
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"/>
 
-    <Button
-        android:id="@+id/rat"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profilId"
-        android:background="#C1EA91"
-        android:text="See\nfeedbacks"></Button>
+        <Button
+            android:id="@+id/bookApp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Book\nAppointment"
+            android:textSize="12sp">
 
-
-
-
-
-
-
-
+        </Button>
+    </LinearLayout>
 </RelativeLayout>
+</androidx.cardview.widget.CardView>

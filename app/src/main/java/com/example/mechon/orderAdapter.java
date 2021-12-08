@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class orderAdapter extends FirebaseRecyclerAdapter<orders,orderAdapter.My
             orders ord=model;
             holder.oname.setText(" Name : "+ord.getUser().getName());
             holder.oadd.setText(" Address: "+ord.getUser().getAddress());
+            holder.ophone.setText(" Mobile: "+ord.getUser().getPhone());
             FirebaseDatabase ref,useref1;
             DatabaseReference ref2,userref2,userCan;
             useref1=FirebaseDatabase.getInstance();
@@ -66,11 +68,6 @@ public class orderAdapter extends FirebaseRecyclerAdapter<orders,orderAdapter.My
                             String md=userref2.push().getKey();
                             ord.setOid(md);
                             userref2.child(md).setValue(ord);
-                            Uri uri=Uri.parse("https://www.google.co.in/maps/dir/"+ord.getMechanical().getAddress()+"/"+ord.getUser().getAddress());
-                            Intent intent=new Intent(Intent.ACTION_VIEW,uri);
-                            intent.setPackage("com.google.android.apps.maps");
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            context.startActivity(intent);
                         }
                     });
                     //Toast.makeText(context,ord.getUser().getUuid()+" "+ord.getOid2(),Toast.LENGTH_SHORT).show();
@@ -95,6 +92,16 @@ public class orderAdapter extends FirebaseRecyclerAdapter<orders,orderAdapter.My
                     });
                 }
             });
+            holder.showLoc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri uri=Uri.parse("https://www.google.co.in/maps/dir/"+ord.getMechanical().getAddress()+"/"+ord.getUser().getAddress());
+                    Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+                    intent.setPackage("com.google.android.apps.maps");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+                }
+            });
         }
         else if(cur=="mechDone")
         {
@@ -104,9 +111,13 @@ public class orderAdapter extends FirebaseRecyclerAdapter<orders,orderAdapter.My
            layout=(ViewGroup) holder.canbtn.getParent();
             if(null!=layout)
                 layout.removeView(holder.canbtn);
+            layout=(ViewGroup) holder.showLoc.getParent();
+            if(null!=layout)
+                layout.removeView(holder.showLoc);
             orders ord=model;
             holder.oname.setText(" Name : "+ord.getUser().getName());
             holder.oadd.setText(" Address: "+ord.getUser().getAddress());
+            holder.ophone.setText(" Mobile: "+ord.getUser().getPhone());
         }
     }
 
@@ -122,15 +133,18 @@ public class orderAdapter extends FirebaseRecyclerAdapter<orders,orderAdapter.My
 
     public static class MyviewHolder extends RecyclerView.ViewHolder
     {
-        TextView oname,oadd;
+        TextView oname,oadd,ophone;
         ImageButton okbtn,canbtn;
+        Button showLoc;
 
         public MyviewHolder(@NonNull View itemView) {
             super(itemView);
             oname=itemView.findViewById(R.id.ordname);
             oadd=itemView.findViewById(R.id.ordAdd);
+            ophone=itemView.findViewById(R.id.ordUphone);
             okbtn=itemView.findViewById(R.id.ordOk);
             canbtn=itemView.findViewById(R.id.ordCan);
+            showLoc=itemView.findViewById(R.id.showUserLocation);
         }
     }
 }
